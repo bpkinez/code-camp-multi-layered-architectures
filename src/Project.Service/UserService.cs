@@ -5,11 +5,11 @@ using System.Collections.Generic;
 
 namespace Project.Service
 {
-    public class UserService
+    public class UserService : IUserService
     {
         #region Constructors
 
-        public UserService(UserRepository repository)
+        public UserService(IUserRepository repository)
         {
             this.Repository = repository;
         }
@@ -18,15 +18,16 @@ namespace Project.Service
 
         #region Properties
 
-        protected UserRepository Repository { get; private set; }
+        protected IUserRepository Repository { get; private set; }
 
         #endregion Properties
 
         #region Methods
 
-        public List<UserEntity> Get()
+        public List<User> Get()
         {
-            return Repository.Get();
+            return new List<User>();
+            //return Repository.Get();
         }
 
         #endregion Methods

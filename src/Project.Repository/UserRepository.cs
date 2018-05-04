@@ -41,7 +41,7 @@ namespace Project.Repository
 
         #region Methods
 
-        public List<UserEntity> Get()
+        public virtual List<UserEntity> Get()
         {
             return UserRepository.Storage;
         }
