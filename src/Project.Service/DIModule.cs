@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ninject;
+using Project.Service.Common;
 
 namespace Project.Service
 {
@@ -8,7 +9,10 @@ namespace Project.Service
 
         public override void Load()
         {
-            throw new NotImplementedException();
+            var kernel = new StandardKernel();
+
+            kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<ICompanyService>().To<CompanyService>();
         }
 
         #endregion Methods

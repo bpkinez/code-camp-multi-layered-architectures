@@ -7,6 +7,10 @@ namespace Project.WebAPI.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Ninject.Web.WebApi;
+    using Project.Repository;
+    using Project.Repository.Common;
+    using Project.Service;
+    using Project.Service.Common;
     using System;
     using System.Web;
     using System.Web.Http;
@@ -69,6 +73,16 @@ namespace Project.WebAPI.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<ICompanyRepository>().To<CompanyRepository>();
+            kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<ICompanyService>().To<CompanyService>();
+
+            //var kernel = new StandardKernel(
+            //    new Project.Repository.DIModule(),
+            //    new Project.Service.DIModule()
+            //);
+
             GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
         }
     }

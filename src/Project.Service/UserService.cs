@@ -25,7 +25,7 @@ namespace Project.Service
 
         #region Methods
 
-        public List<IUser> Get()
+        public virtual List<IUser> Get()
         {
             return Repository.Get();
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ninject;
+using Project.Repository.Common;
 
 namespace Project.Repository
 {
@@ -8,7 +9,10 @@ namespace Project.Repository
 
         public override void Load()
         {
-            throw new NotImplementedException();
+            var kernel = new StandardKernel();
+
+            kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<ICompanyRepository>().To<CompanyRepository>();
         }
 
         #endregion Methods

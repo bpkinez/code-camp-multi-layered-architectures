@@ -81,9 +81,25 @@
       <Project>{9ac75e17-a92d-44bb-8d3a-fc93f96e2636}</Project>
       <Name>Project.DAL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Project.Models.Common\Project.Models.Common.csproj">
+      <Project>{14935ce6-162b-4585-a9f5-344ab8c31dc0}</Project>
+      <Name>Project.Models.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Models\Project.Models.csproj">
+      <Project>{0cf70ca7-86ac-40a5-83c9-533da03424ae}</Project>
+      <Name>Project.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Repository.Common\Project.Repository.Common.csproj">
+      <Project>{d0b52496-2b71-470c-a199-75bfc07b5d6d}</Project>
+      <Name>Project.Repository.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Project.Repository\Project.Repository.csproj">
       <Project>{1a917361-3b4c-4035-8f12-132c8dfb0e16}</Project>
       <Name>Project.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Project.Service.Common\Project.Service.Common.csproj">
+      <Project>{cf1449f9-409b-4102-b7a9-a4a35d7e4aa5}</Project>
+      <Name>Project.Service.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\Project.Service\Project.Service.csproj">
       <Project>{05897b00-5b3c-458d-affe-b802b7bb5d05}</Project>

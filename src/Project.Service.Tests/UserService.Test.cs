@@ -1,11 +1,9 @@
-﻿using Project.DAL.Entities;
-using FluentAssertions;
-using System;
+﻿using FluentAssertions;
 using System.Collections.Generic;
-using Project.Service;
 using Moq;
 using Xunit;
 using Project.Repository;
+using Project.Models.Common;
 
 namespace Project.Service.Tests
 {
@@ -47,7 +45,7 @@ namespace Project.Service.Tests
             public UserServiceFixture()
             {
                 UserRepository = new Mock<UserRepository>();
-                UserRepository.Setup(p => p.Get()).Returns(new List<UserEntity>());
+                UserRepository.Setup(p => p.Get()).Returns(new List<IUser>());
 
                 Target = new UserService(UserRepository.Object);
             }
